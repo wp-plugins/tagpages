@@ -1,7 +1,7 @@
 === TagPages ===
 Contributors: neoxx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bernhard%40riedl%2ename&item_name=Donation%20for%20Featuring%20CountComments&no_shipping=1&no_note=1&tax=0&currency_code=EUR&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: taxonomy, taxonomies, tag, tags, page, pages, post-tag, post-tags, page-tag, page-tags
+Tags: taxonomy, taxonomies, tag, tags, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site
 Requires at least: 3.0
 Tested up to: 3.1
 Stable tag: trunk
@@ -10,7 +10,7 @@ Adds post-tags functionality for pages.
 
 == Description ==
 
-This plugin is a follow-up to [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/) which I wrote a few years ago. – The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include them with the total count in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
+This plugin is a follow-up to [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/) which I wrote a few years ago. - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include them with the total count in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
 
 Requirements for current version:
 
