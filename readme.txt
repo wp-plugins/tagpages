@@ -1,0 +1,53 @@
+=== TagPages ===
+Contributors: neoxx
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bernhard%40riedl%2ename&item_name=Donation%20for%20Featuring%20CountComments&no_shipping=1&no_note=1&tax=0&currency_code=EUR&bn=PP%2dDonationsBF&charset=UTF%2d8
+Tags: taxonomy, taxonomies, tag, tags, page, pages, post-tag, post-tags, page-tag, page-tags
+Requires at least: 3.0
+Tested up to: 3.1
+Stable tag: trunk
+
+Adds post-tags functionality for pages.
+
+== Description ==
+
+This plugin is a follow-up to [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/) which I wrote a few years ago. – The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include them with the total count in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
+
+Requirements for current version:
+
+* WordPress 3.0 or higher
+* PHP 5 or higher
+* You can check your PHP version with the [Health Check](http://wordpress.org/extend/plugins/health-check/) plugin.
+
+== Installation ==
+
+1. Copy the `tagpages` directory into your WordPress plugins directory (usually wp-content/plugins). Hint: You can also conduct this step within your Admin Menu.
+
+2. In the WordPress Admin Menu go to the Plugins tab and activate the TagPages plugin.
+
+3. Be happy and celebrate! (and maybe you want to add a link to [http://www.neotrinity.at/projects/](http://www.neotrinity.at/projects/))
+
+== Frequently Asked Questions ==
+
+= Why do the Post Tags sections for posts and pages in the Admin Menu show the same tag count? =
+
+The reason for that is that we combine the number of occurrences of tags used in posts and pages in the taxonomy `Post Tags`. Though, if you click on the number of a certain tag, WordPress will only show the related posts or pages of the selected tag.
+
+= Does TagPages work for WordPress prior 3.0? =
+
+Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/), which explains how to establish tags functionality for pages in WordPress 2.3 - 3.0.
+
+== Screenshots ==
+
+1. This screenshot shows editing a page in the Admin Menu.
+
+2. The second picture shows the Pages section in the Admin Menu.
+
+== Upgrade Notice ==
+
+No upgrade notices so far...
+
+== Changelog ==
+
+= 1.00 =
+
+* initial release (fingers crossed)
