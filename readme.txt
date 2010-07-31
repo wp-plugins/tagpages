@@ -28,6 +28,12 @@ Requirements for current version:
 
 == Frequently Asked Questions ==
 
+= How can I display the chosen tags on my pages? =
+
+You can use for example the built-in Theme Editor of WordPress to edit `page.php` (if such a template exists for your theme). WordPress provides two template functions which can be used out-of-the-box: [`the_tags`](http://codex.wordpress.org/Function_Reference/the_tags) and `get_the_tags`.
+
+For further information about themes, please refer to the WordPress Codex Pages for [Theme Development](http://codex.wordpress.org/Theme_Development) or the user's manual of our theme.
+
 = Why do the Post Tags sections for posts and pages in the Admin Menu show the same tag count? =
 
 The reason for that is that we combine the number of occurrences of tags used in posts and pages in the taxonomy `Post Tags`. Though, if you click on the number of a certain tag, WordPress will only show the related posts or pages of the selected tag.
