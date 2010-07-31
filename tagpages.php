@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.neotrinity.at/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.00
+Version: 1.10
 Author URI: http://www.bernhard.riedl.name/
 */
 
@@ -53,6 +53,19 @@ Class
 class TagPages {
 
 	/*
+	prefix for fields, options, etc.
+	*/
+
+	private $prefix='tagpages';
+
+	/*
+	nicename for options-page,
+	meta-data, etc.
+	*/
+
+	private $nicename='TagPages';
+
+	/*
 	Constructor
 	*/
 
@@ -92,6 +105,13 @@ class TagPages {
 		remove_action('init', 'create_initial_taxonomies', 0);
 
 		/*
+		adds post_type 'page' to where-clause
+		of tag-queries
+		*/
+
+		add_filter('posts_where', array(&$this, 'add_page_to_tags_where_clause'));
+
+		/*
 		add tags column and content
 		in Pages section of Admin Menu
 		*/
@@ -105,7 +125,44 @@ class TagPages {
 		*/
 
 		add_filter('manage_edit-post_tag_columns', array(&$this, 'manage_edit_post_tag_columns'));
+
+		/*
+		meta-data
+		*/
+
+		add_action('wp_head', array(&$this, 'head_meta'));
+		add_action('admin_head', array(&$this, 'head_meta'));
 	}
+
+	/*
+	GETTERS AND SETTERS
+	*/
+
+	/*
+	getter for prefix
+	true with trailing _
+	false without trailing _
+	*/
+
+	function get_prefix($trailing_=true) {
+		if ($trailing_)
+			return $this->prefix.'_';
+		else
+			return $this->prefix;
+	}
+
+	/*
+	getter for nicename
+	*/
+
+	function get_nicename() {
+		return $this->nicename;
+	}
+
+	/*
+	CALLED BY HOOKS
+	(and therefore public)
+	*/
 
 	/*
 	include the page as post_type for post-tags
@@ -124,6 +181,23 @@ class TagPages {
 	function create_initial_taxonomies_add_page_to_tags_taxonomy() {
 		create_initial_taxonomies();
 		$this->add_page_to_tags_taxonomy();
+	}
+
+	/*
+	add post_type 'page'
+	to where statement of
+	tag-queries
+
+	taken from tags4page by Michele Marcucci
+	http://www.michelem.org/wordpress-plugin-tags4page/
+	*/
+
+	function add_page_to_tags_where_clause($where) {
+		if(is_tag()) {
+			$where = preg_replace("/ ([0-9a-zA-Z_]*\.?)post_type = 'post'/", "(${1}post_type = 'post' OR ${1}post_type = 'page')", $where);
+		}
+
+		return $where;
 	}
 
 	/*
@@ -180,6 +254,14 @@ class TagPages {
 
 		$columns['posts']='<span title="'.sprintf(__('combined number of occurrences in %2$s and %3$s, but will only show %1$s'), __($show), __('Posts'), __('Pages')).'">'.__('Posts').' &amp; '.__('Pages').'</span>';
 		return $columns;
+	}
+
+	/*
+	adds meta-information to HTML header
+	*/
+
+	function head_meta() {
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.10\"/>\n");
 	}
 
 }

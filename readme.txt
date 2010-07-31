@@ -48,6 +48,11 @@ No upgrade notices so far...
 
 == Changelog ==
 
+= 1.10 =
+
+* all the fingers crossing didn't help. ;) Sorry, I screwed up and forgot to include some code, which prevented the tagged pages from showing up in the front-end (your theme)...
+* added some meta-data to the front- and back-end
+
 = 1.00 =
 
 * initial release (fingers crossed)
