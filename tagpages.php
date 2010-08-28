@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.neotrinity.at/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.10
+Version: 1.20
 Author URI: http://www.bernhard.riedl.name/
 */
 
@@ -106,7 +106,7 @@ class TagPages {
 
 		/*
 		adds post_type 'page' to where-clause
-		of tag-queries
+		of front-end tag-queries
 		*/
 
 		add_filter('posts_where', array(&$this, 'add_page_to_tags_where_clause'));
@@ -117,14 +117,21 @@ class TagPages {
 		*/
 
 		add_filter('manage_pages_columns', array(&$this, 'manage_pages_columns'));
-		add_filter('manage_pages_custom_column', array(&$this, 'manage_pages_custom_column'), 10, 3);
+		add_filter('manage_pages_custom_column', array(&$this, 'manage_pages_custom_column'), 10, 2);
 
 		/*
-		adopt name of Posts column in
+		adopt name of Posts column and
+		add title to column header in
 		Post Tags section of Admin Menu
 		*/
 
 		add_filter('manage_edit-post_tag_columns', array(&$this, 'manage_edit_post_tag_columns'));
+
+		/*
+		Admin Menu i18n
+		*/
+
+		add_action('admin_init', array(&$this, 'admin_menu_i18n'));
 
 		/*
 		meta-data
@@ -186,30 +193,31 @@ class TagPages {
 	/*
 	add post_type 'page'
 	to where statement of
-	tag-queries
+	front-end tag-queries
 
 	taken from tags4page by Michele Marcucci
 	http://www.michelem.org/wordpress-plugin-tags4page/
 	*/
 
 	function add_page_to_tags_where_clause($where) {
-		if(is_tag()) {
+		if (is_tag() && (!defined('WP_ADMIN') || (defined('WP_ADMIN') && !WP_ADMIN)))
 			$where = preg_replace("/ ([0-9a-zA-Z_]*\.?)post_type = 'post'/", "(${1}post_type = 'post' OR ${1}post_type = 'page')", $where);
-		}
 
 		return $where;
 	}
 
 	/*
 	WordPress seems to automatically
-	create the Tags columns, but
-	to assure it in future version,
+	create the Tags column, but
+	to assure it in future versions,
 	we also manually add the tags column
 	to the Pages section of the Admin Menu
 	*/
 
 	function manage_pages_columns($columns) {
-		$columns['tags']=__('Tags');
+		if (!isset($columns['tags']))
+			$columns['tags']=esc_html(__('Tags'));
+
 		return $columns;
 	}
 
@@ -218,8 +226,8 @@ class TagPages {
 	tags column in Pages section
 	of Admin Menu
 
-	based on function post_row
-	in wp-admin/includes/template.php
+	based on function single_row
+	in wp-admin/includes/default-list-tables.php
 	*/
 
 	function manage_pages_custom_column($column_name, $page_id) {
@@ -230,7 +238,7 @@ class TagPages {
 				$out = array();
 
 				foreach($tags as $c)
-					$out[] = "<a href='edit.php?post_type=page&amp;tag={$c->slug}'> " . esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'post_tag', 'display')) . '</a>';
+					$out[] = sprintf('<a href="%s">%s</a>', esc_html(add_query_arg(array('post_type' => 'page', 'tag' => $c->slug), admin_url('edit.php'))), esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'tag', 'display')));
 
 				echo join(', ', $out);
 			}
@@ -242,18 +250,42 @@ class TagPages {
 	}
 
 	/*
-	adopt the name the Posts column in
+	adopt the name of the Posts column in
 	the Post Tags section of the Admin Menu
 	and give some tooltip-hint
 	*/
 
 	function manage_edit_post_tag_columns($columns) {
-		$show=__('Posts');
-		if (isset($_REQUEST['post_type']) && !empty($_REQUEST['post_type']) && $_REQUEST['post_type']=='page')
-			$show=__('Pages');
+		$show='Posts';
 
-		$columns['posts']='<span title="'.sprintf(__('combined number of occurrences in %2$s and %3$s, but will only show %1$s'), __($show), __('Posts'), __('Pages')).'">'.__('Posts').' &amp; '.__('Pages').'</span>';
+		if (isset($_REQUEST['post_type']) && !empty($_REQUEST['post_type']) && $_REQUEST['post_type']=='page')
+			$show='Pages';
+
+		/*
+		translators:
+		%1$s = Current post-type (Posts or Pages)
+		%2$s = Posts
+		%3$s = Pages
+		%4$s = Tags
+		*/
+
+		$columns['posts']='<span title="'.esc_html(sprintf(__('total number of %4$s in %2$s and %3$s, but only %1$s will be shown', $this->get_prefix(false)), __($show), __('Posts'), __('Pages'), __('Tags'))).'">'.esc_html(__('Posts').' & '.__('Pages')).'</span>';
+
 		return $columns;
+	}
+
+	/*
+	loads translation
+	*/
+
+	function admin_menu_i18n() {
+
+		/*
+		load i18n textdomain
+		*/
+
+		$plugin_dir = basename(dirname(__FILE__));
+		load_plugin_textdomain($this->get_prefix(false), null, $plugin_dir.'/lang');
 	}
 
 	/*
@@ -261,7 +293,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.10\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.20\"/>\n");
 	}
 
 }

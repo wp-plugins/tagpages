@@ -44,7 +44,7 @@ The reason for that is that we combine the number of occurrences of tags used in
 
 = Does TagPages work for WordPress prior 3.0? =
 
-Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/), which explains how to establish tags functionality for pages in WordPress 2.3 - 3.0.
+Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/), which explains how to establish tags functionality for pages in WordPress 2.3 - 2.9.
 
 == Screenshots ==
 
@@ -57,6 +57,13 @@ Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.ne
 No upgrade notices so far...
 
 == Changelog ==
+
+= 1.20 =
+
+* changed behaviour of Tags section for posts so only posts will be shown.
+* implemented i18n for consistency - currently only one line ;)
+* added German translation
+* applied some minor internal changes
 
 = 1.10 =
 
