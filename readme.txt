@@ -58,6 +58,10 @@ No upgrade notices so far...
 
 == Changelog ==
 
+= 1.30 =
+
+* enhanced compatibility with other custom taxonomy/post type plugins
+
 = 1.20 =
 
 * changed behaviour of Tags section for posts so only posts will be shown.

@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.neotrinity.at/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.20
+Version: 1.30
 Author URI: http://www.bernhard.riedl.name/
 */
 
@@ -93,16 +93,7 @@ class TagPages {
 		*/
 
 		add_action('plugins_loaded', array(&$this, 'add_page_to_tags_taxonomy'));
-		add_action('init', array(&$this, 'create_initial_taxonomies_add_page_to_tags_taxonomy'), 0);
-
-		/*
-		The second call already
-		exists for the init hook. So we gonna
-		remove the hook and use the replacement
-		from above instead
-		*/
-
-		remove_action('init', 'create_initial_taxonomies', 0);
+		add_action('init', array(&$this, 'add_page_to_tags_taxonomy'), 0);
 
 		/*
 		adds post_type 'page' to where-clause
@@ -177,17 +168,6 @@ class TagPages {
 
 	function add_page_to_tags_taxonomy() {
 		register_taxonomy_for_object_type('post_tag', 'page');
-	}
-
-	/*
-	expanded version of
-	create_initial_taxonomies()
-	in wp-includes/taxonomy.php
-	*/
-
-	function create_initial_taxonomies_add_page_to_tags_taxonomy() {
-		create_initial_taxonomies();
-		$this->add_page_to_tags_taxonomy();
 	}
 
 	/*
@@ -293,7 +273,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.20\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.30\"/>\n");
 	}
 
 }
