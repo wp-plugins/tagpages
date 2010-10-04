@@ -18,6 +18,10 @@ Requirements for current version:
 * PHP 5 or higher
 * You can check your PHP version with the [Health Check](http://wordpress.org/extend/plugins/health-check/) plugin.
 
+**Plugin's website:** [http://www.neotrinity.at/projects/](http://www.neotrinity.at/projects/)
+
+**Author's website:** [http://www.bernhard.riedl.name/](http://www.bernhard.riedl.name/)
+
 == Installation ==
 
 1. Copy the `tagpages` directory into your WordPress plugins directory (usually wp-content/plugins). Hint: You can also conduct this step within your Admin Menu.
