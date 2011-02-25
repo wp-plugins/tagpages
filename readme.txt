@@ -3,7 +3,7 @@ Contributors: neoxx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bernhard%40riedl%2ename&item_name=Donation%20for%20Featuring%20CountComments&no_shipping=1&no_note=1&tax=0&currency_code=EUR&bn=PP%2dDonationsBF&charset=UTF%2d8
 Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site
 Requires at least: 3.0
-Tested up to: 3.1
+Tested up to: 3.2
 Stable tag: trunk
 
 Adds post-tags functionality for pages.
@@ -61,6 +61,11 @@ Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.ne
 No upgrade notices so far...
 
 == Changelog ==
+
+= 1.31 =
+
+* small enhancements
+* fixed WordPress deprecated warning
 
 = 1.30 =
 

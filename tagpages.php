@@ -5,12 +5,12 @@ Plugin Name: TagPages
 Plugin URI: http://www.neotrinity.at/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.30
+Version: 1.31
 Author URI: http://www.bernhard.riedl.name/
 */
 
 /*
-Copyright 2010 Dr. Bernhard Riedl
+Copyright 2010-2011 Dr. Bernhard Riedl
 
 This program is free software:
 you can redistribute it and/or modify
@@ -174,14 +174,14 @@ class TagPages {
 	add post_type 'page'
 	to where statement of
 	front-end tag-queries
-
-	taken from tags4page by Michele Marcucci
-	http://www.michelem.org/wordpress-plugin-tags4page/
 	*/
 
 	function add_page_to_tags_where_clause($where) {
-		if (is_tag() && (!defined('WP_ADMIN') || (defined('WP_ADMIN') && !WP_ADMIN)))
-			$where = preg_replace("/ ([0-9a-zA-Z_]*\.?)post_type = 'post'/", "(${1}post_type = 'post' OR ${1}post_type = 'page')", $where);
+		if (is_tag() && !is_admin()) {
+			global $wpdb;
+
+			$where = str_replace("$wpdb->posts.post_type = 'post'", "$wpdb->posts.post_type IN ('post', 'page')", $where);
+		}
 
 		return $where;
 	}
@@ -265,7 +265,7 @@ class TagPages {
 		*/
 
 		$plugin_dir = basename(dirname(__FILE__));
-		load_plugin_textdomain($this->get_prefix(false), null, $plugin_dir.'/lang');
+		load_plugin_textdomain($this->get_prefix(false), false, $plugin_dir.'/lang');
 	}
 
 	/*
@@ -273,7 +273,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.30\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.31\"/>\n");
 	}
 
 }
