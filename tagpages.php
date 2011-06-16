@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.neotrinity.at/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.31
+Version: 1.40
 Author URI: http://www.bernhard.riedl.name/
 */
 
@@ -96,11 +96,11 @@ class TagPages {
 		add_action('init', array(&$this, 'add_page_to_tags_taxonomy'), 0);
 
 		/*
-		adds post_type 'page' to where-clause
+		adds post_type 'page' to query vars
 		of front-end tag-queries
 		*/
 
-		add_filter('posts_where', array(&$this, 'add_page_to_tags_where_clause'));
+		add_filter('pre_get_posts', array(&$this, 'add_page_to_tags_query'));
 
 		/*
 		add tags column and content
@@ -172,18 +172,32 @@ class TagPages {
 
 	/*
 	add post_type 'page'
-	to where statement of
+	to query vars of
 	front-end tag-queries
 	*/
 
-	function add_page_to_tags_where_clause($where) {
+	function add_page_to_tags_query($query) {
 		if (is_tag() && !is_admin()) {
-			global $wpdb;
+			$post_type=$query->get('post_type');
 
-			$where = str_replace("$wpdb->posts.post_type = 'post'", "$wpdb->posts.post_type IN ('post', 'page')", $where);
+			/*
+			if post_type is set to 'any'
+			or includes 'page'
+			there's nothing more to do
+			*/
+
+			if (!empty($post_type) && (($post_type=='any') || (in_array('page', (array) $post_type))))
+				return $query;
+
+			/*
+			otherwise include post and page
+			into post_type
+			*/
+
+			$query->set('post_type', array_unique(array_merge((array) $post_type, array('post', 'page'))));
 		}
 
-		return $where;
+		return $query;
 	}
 
 	/*
@@ -273,7 +287,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.31\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.40\"/>\n");
 	}
 
 }
