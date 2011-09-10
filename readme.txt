@@ -18,6 +18,8 @@ Requirements for current version:
 * PHP 5 or higher
 * You can check your PHP version with the [Health Check](http://wordpress.org/extend/plugins/health-check/) plugin.
 
+TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.org/Administration_Over_SSL).
+
 **Plugin's website:** [http://www.neotrinity.at/projects/](http://www.neotrinity.at/projects/)
 
 **Author's website:** [http://www.bernhard.riedl.name/](http://www.bernhard.riedl.name/)
