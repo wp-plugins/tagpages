@@ -41,7 +41,7 @@ You can use for example the built-in Theme Editor of WordPress to edit `page.php
 For further information about themes, please refer to the WordPress Codex Pages for [Theme Development](http://codex.wordpress.org/Theme_Development) or the user's manual of our theme.
 
 = Will the tags I've created with TagPages be lost if I change the theme or disable TagPages? =
-= Will I loose any tags I've created with tags4page if I switch to TagPages? =
+= Will I lose any tags I've created with tags4page if I switch to TagPages? =
 
 Not at all. - Both TagPages and tags4page (as well as some other plugins) are based on the built-in WordPress taxonomy. - Even if you change the theme or deactivate TagPages, your tags and their relations to posts and pages will not be harmed. ;)
 
