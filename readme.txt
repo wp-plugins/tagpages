@@ -1,16 +1,16 @@
 === TagPages ===
 Contributors: neoxx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bernhard%40riedl%2ename&item_name=Donation%20for%20Featuring%20CountComments&no_shipping=1&no_note=1&tax=0&currency_code=EUR&bn=PP%2dDonationsBF&charset=UTF%2d8
-Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site
+Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site, network
 Requires at least: 3.0
-Tested up to: 3.3
+Tested up to: 3.4
 Stable tag: trunk
 
 Adds post-tags functionality for pages.
 
 == Description ==
 
-This plugin is a follow-up to [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/) which I wrote a few years ago. - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include them with the total count in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
+This plugin is a [follow-up](http://www.neotrinity.at/2010/08/01/tagpages-tags-functionality-for-pages-in-wordpress-30/) to the post which I wrote [a few years ago](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/). - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include their number in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
 
 Requirements for current version:
 
@@ -40,9 +40,10 @@ You can use for example the built-in Theme Editor of WordPress to edit `page.php
 
 For further information about themes, please refer to the WordPress Codex Pages for [Theme Development](http://codex.wordpress.org/Theme_Development) or the user's manual of our theme.
 
-= Will the tags which I've created with tags4page be lost? =
+= Will the tags I've created with TagPages be lost if I change the theme or disable TagPages? =
+= Will I loose any tags I've created with tags4page if I switch to TagPages? =
 
-No, both TagPages and [tags4page](http://wordpress.org/extend/plugins/tags4page/) (and also some other plugins) are based on the built-in taxonomy of WordPress. - Your tags and their relations to posts and pages will not be harmed. ;)
+Not at all. - Both TagPages and tags4page (as well as some other plugins) are based on the built-in WordPress taxonomy. - Even if you change the theme or deactivate TagPages, your tags and their relations to posts and pages will not be harmed. ;)
 
 = Why do the Post Tags sections for posts and pages in the Admin Menu show the same tag count? =
 

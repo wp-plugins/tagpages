@@ -10,7 +10,7 @@ Author URI: http://www.bernhard.riedl.name/
 */
 
 /*
-Copyright 2010-2011 Dr. Bernhard Riedl
+Copyright 2010-2012 Dr. Bernhard Riedl
 
 This program is free software:
 you can redistribute it and/or modify
