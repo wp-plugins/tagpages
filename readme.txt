@@ -5,6 +5,8 @@ Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags
 Requires at least: 3.0
 Tested up to: 3.4
 Stable tag: trunk
+License: GPLv3 or later
+License URI: http://www.gnu.org/licenses/gpl-3.0.html
 
 Adds post-tags functionality for pages.
 
