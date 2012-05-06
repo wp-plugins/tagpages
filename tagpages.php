@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.neotrinity.at/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.40
+Version: 1.41
 Author URI: http://www.bernhard.riedl.name/
 */
 
@@ -250,20 +250,12 @@ class TagPages {
 	*/
 
 	function manage_edit_post_tag_columns($columns) {
-		$show='Posts';
+		$title_text=__('total number of tags in posts and pages, but only posts will be shown', $this->get_prefix(false));
 
 		if (isset($_REQUEST['post_type']) && !empty($_REQUEST['post_type']) && $_REQUEST['post_type']=='page')
-			$show='Pages';
+			$title_text=__('total number of tags in posts and pages, but only pages will be shown', $this->get_prefix(false));
 
-		/*
-		translators:
-		%1$s = Current post-type (Posts or Pages)
-		%2$s = Posts
-		%3$s = Pages
-		%4$s = Tags
-		*/
-
-		$columns['posts']='<span title="'.esc_html(sprintf(__('total number of %4$s in %2$s and %3$s, but only %1$s will be shown', $this->get_prefix(false)), __($show), __('Posts'), __('Pages'), __('Tags'))).'">'.esc_html(__('Posts').' & '.__('Pages')).'</span>';
+		$columns['posts']='<span title="'.esc_html($title_text).'">'.esc_html(__('Posts').' & '.__('Pages')).'</span>';
 
 		return $columns;
 	}
@@ -287,7 +279,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.40\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.41\"/>\n");
 	}
 
 }

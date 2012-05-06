@@ -67,6 +67,12 @@ No upgrade notices so far...
 
 == Changelog ==
 
+= 1.41 =
+
+* adopted i18n strings
+* updated German translation
+* added Lithuanian translation, props [Vincentas Grinius](http://www.host1free.com)
+
 = 1.40 =
 
 * adopted query-handling on post-tags archive-pages

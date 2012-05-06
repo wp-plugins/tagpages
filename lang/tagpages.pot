@@ -2,7 +2,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: TagPages\n"
 "Report-Msgid-Bugs-To: \n"
-"POT-Creation-Date: 2010-08-27 11:27+0700\n"
+"POT-Creation-Date: 2012-04-27 17:12+0100\n"
 "PO-Revision-Date: \n"
 "Last-Translator: Dr. Bernhard Riedl <http://www.bernhard.riedl.name/>\n"
 "Language-Team: \n"
@@ -10,15 +10,17 @@ msgstr ""
 "Content-Type: text/plain; charset=UTF-8\n"
 "Content-Transfer-Encoding: 8bit\n"
 "X-Poedit-KeywordsList: _e;__\n"
-"X-Poedit-Basepath: ../\n"
+"X-Poedit-Basepath: ..\n"
 "Plural-Forms: s\n"
 "X-Poedit-Language: English\n"
 "X-Poedit-SourceCharset: utf-8\n"
-"X-Poedit-SearchPath-0: ../\n"
+"X-Poedit-SearchPath-0: ..\n"
 
-# %1$s = Current post-type (Posts or Pages)
-# %2$s = Posts
-# %3$s = Pages
-# %4$s = Tags
-msgid "total number of %4$s in %2$s and %3$s, but only %1$s will be shown"
+#: ../trunk/tagpages.php:253
+msgid "total number of tags in posts and pages, but only posts will be shown"
 msgstr ""
+
+#: ../trunk/tagpages.php:256
+msgid "total number of tags in posts and pages, but only pages will be shown"
+msgstr ""
+
