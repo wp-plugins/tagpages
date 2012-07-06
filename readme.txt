@@ -1,9 +1,9 @@
 === TagPages ===
 Contributors: neoxx
-Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_xclick&business=bernhard%40riedl%2ename&item_name=Donation%20for%20Featuring%20CountComments&no_shipping=1&no_note=1&tax=0&currency_code=EUR&bn=PP%2dDonationsBF&charset=UTF%2d8
+Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AP3D3FJSUK3TY
 Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site, network
 Requires at least: 3.0
-Tested up to: 3.4
+Tested up to: 3.5
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -12,7 +12,7 @@ Adds post-tags functionality for pages.
 
 == Description ==
 
-This plugin is a [follow-up](http://www.neotrinity.at/2010/08/01/tagpages-tags-functionality-for-pages-in-wordpress-30/) to the post which I wrote [a few years ago](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/). - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include their number in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
+This plugin is a [follow-up](http://www.bernhard-riedl.com/2010/08/01/tagpages-tags-functionality-for-pages-in-wordpress-30/) to the post which I wrote [a few years ago](http://www.bernhard-riedl.com/2007/10/06/wordpress-23-tagging-posts-and-pages/). - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include their number in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
 
 Requirements for current version:
 
@@ -22,9 +22,9 @@ Requirements for current version:
 
 TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.org/Administration_Over_SSL).
 
-**Plugin's website:** [http://www.neotrinity.at/projects/](http://www.neotrinity.at/projects/)
+**Plugin's website:** [http://www.bernhard-riedl.com/projects/](http://www.bernhard-riedl.com/projects/)
 
-**Author's website:** [http://www.bernhard.riedl.name/](http://www.bernhard.riedl.name/)
+**Author's website:** [http://www.bernhard-riedl.com/](http://www.bernhard-riedl.com/)
 
 == Installation ==
 
@@ -32,7 +32,7 @@ TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.o
 
 2. In the WordPress Admin Menu go to the Plugins tab and activate the TagPages plugin.
 
-3. Be happy and celebrate! (and maybe you want to add a link to [http://www.neotrinity.at/projects/](http://www.neotrinity.at/projects/))
+3. Be happy and celebrate! (and maybe you want to add a link to [http://www.bernhard-riedl.com/projects/](http://www.bernhard-riedl.com/projects/))
 
 == Frequently Asked Questions ==
 
@@ -53,7 +53,7 @@ The reason for that is that we combine the number of occurrences of tags used in
 
 = Does TagPages work for WordPress prior 3.0? =
 
-Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.neotrinity.at/2007/10/06/wordpress-23-tagging-posts-and-pages/), which explains how to establish tags functionality for pages in WordPress 2.3 - 2.9.
+Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.bernhard-riedl.com/2007/10/06/wordpress-23-tagging-posts-and-pages/), which explains how to establish tags functionality for pages in WordPress 2.3 - 2.9.
 
 == Screenshots ==
 
@@ -66,6 +66,10 @@ Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.ne
 No upgrade notices so far...
 
 == Changelog ==
+
+= 1.42 =
+
+* updated project-information
 
 = 1.41 =
 

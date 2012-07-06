@@ -2,11 +2,11 @@
 
 /*
 Plugin Name: TagPages
-Plugin URI: http://www.neotrinity.at/projects/
+Plugin URI: http://www.bernhard-riedl.com/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.41
-Author URI: http://www.bernhard.riedl.name/
+Version: 1.42
+Author URI: http://www.bernhard-riedl.com/
 */
 
 /*
@@ -279,7 +279,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.41\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.42\"/>\n");
 	}
 
 }
