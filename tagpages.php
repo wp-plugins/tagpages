@@ -5,12 +5,12 @@ Plugin Name: TagPages
 Plugin URI: http://www.bernhard-riedl.com/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.42
+Version: 1.50
 Author URI: http://www.bernhard-riedl.com/
 */
 
 /*
-Copyright 2010-2012 Dr. Bernhard Riedl
+Copyright 2010-2013 Dr. Bernhard Riedl
 
 This program is free software:
 you can redistribute it and/or modify
@@ -105,10 +105,20 @@ class TagPages {
 		/*
 		add tags column and content
 		in Pages section of Admin Menu
+		in WordPress < 3.5;
+
+		in higher versions this column
+		is added by default
+
+		https://core.trac.wordpress.org/ticket/21240
 		*/
 
-		add_filter('manage_pages_columns', array(&$this, 'manage_pages_columns'));
-		add_filter('manage_pages_custom_column', array(&$this, 'manage_pages_custom_column'), 10, 2);
+		global $wp_version;
+
+		if (version_compare($wp_version, '3.5', '<')) {
+			add_filter('manage_pages_columns', array(&$this, 'manage_pages_columns'));
+			add_filter('manage_pages_custom_column', array(&$this, 'manage_pages_custom_column'), 10, 2);
+		}
 
 		/*
 		adopt name of Posts column and
@@ -201,11 +211,10 @@ class TagPages {
 	}
 
 	/*
-	WordPress seems to automatically
-	create the Tags column, but
-	to assure it in future versions,
-	we also manually add the tags column
-	to the Pages section of the Admin Menu
+	add the tags column
+	to the Pages section
+	of the Admin Menu
+	for WordPress < 3.5
 	*/
 
 	function manage_pages_columns($columns) {
@@ -217,8 +226,10 @@ class TagPages {
 
 	/*
 	echo tags to display in
-	tags column in Pages section
-	of Admin Menu
+	tags column in
+	Pages section
+	of the Admin Menu
+	for WordPress < 3.5
 
 	based on function single_row
 	in wp-admin/includes/default-list-tables.php
@@ -279,7 +290,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.42\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.50\"/>\n");
 	}
 
 }
