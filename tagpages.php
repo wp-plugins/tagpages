@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.bernhard-riedl.com/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.50
+Version: 1.60
 Author URI: http://www.bernhard-riedl.com/
 */
 
@@ -92,15 +92,15 @@ class TagPages {
 		for the taxonomy 'post_tag'.
 		*/
 
-		add_action('plugins_loaded', array(&$this, 'add_page_to_tags_taxonomy'));
-		add_action('init', array(&$this, 'add_page_to_tags_taxonomy'), 0);
+		add_action('plugins_loaded', array($this, 'add_page_to_tags_taxonomy'));
+		add_action('init', array($this, 'add_page_to_tags_taxonomy'), 0);
 
 		/*
 		adds post_type 'page' to query vars
 		of front-end tag-queries
 		*/
 
-		add_filter('pre_get_posts', array(&$this, 'add_page_to_tags_query'));
+		add_filter('pre_get_posts', array($this, 'add_page_to_tags_query'));
 
 		/*
 		add tags column and content
@@ -116,8 +116,8 @@ class TagPages {
 		global $wp_version;
 
 		if (version_compare($wp_version, '3.5', '<')) {
-			add_filter('manage_pages_columns', array(&$this, 'manage_pages_columns'));
-			add_filter('manage_pages_custom_column', array(&$this, 'manage_pages_custom_column'), 10, 2);
+			add_filter('manage_pages_columns', array($this, 'manage_pages_columns'));
+			add_filter('manage_pages_custom_column', array($this, 'manage_pages_custom_column'), 10, 2);
 		}
 
 		/*
@@ -126,20 +126,20 @@ class TagPages {
 		Post Tags section of Admin Menu
 		*/
 
-		add_filter('manage_edit-post_tag_columns', array(&$this, 'manage_edit_post_tag_columns'));
+		add_filter('manage_edit-post_tag_columns', array($this, 'manage_edit_post_tag_columns'));
 
 		/*
 		Admin Menu i18n
 		*/
 
-		add_action('admin_init', array(&$this, 'admin_menu_i18n'));
+		add_action('admin_init', array($this, 'admin_menu_i18n'));
 
 		/*
 		meta-data
 		*/
 
-		add_action('wp_head', array(&$this, 'head_meta'));
-		add_action('admin_head', array(&$this, 'head_meta'));
+		add_action('wp_head', array($this, 'head_meta'));
+		add_action('admin_head', array($this, 'head_meta'));
 	}
 
 	/*
@@ -290,9 +290,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.50\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.60\"/>\n");
 	}
 
 }
-
-?>

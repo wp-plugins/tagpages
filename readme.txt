@@ -3,7 +3,7 @@ Contributors: neoxx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AP3D3FJSUK3TY
 Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site, network
 Requires at least: 3.0
-Tested up to: 3.6
+Tested up to: 3.8
 Stable tag: trunk
 License: GPLv3 or later
 License URI: http://www.gnu.org/licenses/gpl-3.0.html
@@ -14,13 +14,7 @@ Adds post-tags functionality for pages.
 
 This plugin is a [follow-up](http://www.bernhard-riedl.com/2010/08/01/tagpages-tags-functionality-for-pages-in-wordpress-30/) to the post which I wrote [a few years ago](http://www.bernhard-riedl.com/2007/10/06/wordpress-23-tagging-posts-and-pages/). - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include their number in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
 
-Requirements for current version:
-
-* WordPress 3.0 or higher
-* PHP 5 or higher
-* You can check your PHP version with the [Health Check](http://wordpress.org/extend/plugins/health-check/) plugin.
-
-TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.org/Administration_Over_SSL).
+TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.org/Administration_Over_SSL) and WordPress multisite network.
 
 **Plugin's website:** [http://www.bernhard-riedl.com/projects/](http://www.bernhard-riedl.com/projects/)
 
@@ -43,9 +37,8 @@ You can use for example the built-in Theme Editor of WordPress to edit `page.php
 For further information about themes, please refer to the WordPress Codex Pages for [Theme Development](http://codex.wordpress.org/Theme_Development) or the user's manual of our theme.
 
 = Will the tags I've created with TagPages be lost if I change the theme or disable TagPages? =
-= Will I lose any tags I've created with tags4page if I switch to TagPages? =
 
-Not at all. - Both TagPages and tags4page (as well as some other plugins) are based on the built-in WordPress taxonomy. - Even if you change the theme or deactivate TagPages, your tags and their relations to posts and pages will not be harmed. ;)
+Not at all. - TagPages is based on the built-in WordPress taxonomy. - Even if you change the theme or deactivate TagPages, your tags and their relations to posts and pages will not be harmed. ;)
 
 = Why do the Post Tags sections for posts and pages in the Admin Menu show the same tag count? =
 
@@ -57,7 +50,7 @@ Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.be
 
 == Screenshots ==
 
-1. This screenshot shows editing a page in the Admin Menu.
+1. This screenshot illustrates editing a page in the Admin Menu.
 
 2. The second picture shows the Pages section in the Admin Menu.
 
@@ -66,6 +59,13 @@ Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.be
 No upgrade notices so far...
 
 == Changelog ==
+
+= 1.60 =
+
+* tested with PHP 5.4
+* removed closing PHP tag before EOF
+* removed reference sign on function calls
+* cleaned-up code
 
 = 1.50 =
 
