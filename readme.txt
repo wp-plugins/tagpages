@@ -3,18 +3,18 @@ Contributors: neoxx
 Donate link: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&amp;hosted_button_id=AP3D3FJSUK3TY
 Tags: taxonomy, taxonomies, tag, tags, tagging, page, pages, post-tag, post-tags, page-tag, page-tags, multisite, multi-site, network
 Requires at least: 3.0
-Tested up to: 3.9
+Tested up to: 4.0
 Stable tag: trunk
 License: GPLv3 or later
-License URI: http://www.gnu.org/licenses/gpl-3.0.html
+License URI: https://www.gnu.org/licenses/gpl-3.0.html
 
 Adds post-tags functionality for pages.
 
 == Description ==
 
-This plugin is a [follow-up](http://www.bernhard-riedl.com/2010/08/01/tagpages-tags-functionality-for-pages-in-wordpress-30/) to the post which I wrote [a few years ago](http://www.bernhard-riedl.com/2007/10/06/wordpress-23-tagging-posts-and-pages/). - The idea was (and still is) to equip pages with [tags](http://en.support.wordpress.com/posts/post-tags/) and include their number in a combined posts and pages [tag-cloud](http://codex.wordpress.org/Function_Reference/wp_tag_cloud).
+This plugin is a [follow-up](http://www.bernhard-riedl.com/2010/08/01/tagpages-tags-functionality-for-pages-in-wordpress-30/) to the post which I wrote [a few years ago](http://www.bernhard-riedl.com/2007/10/06/wordpress-23-tagging-posts-and-pages/). - The idea was (and still is) to equip pages with [tags](https://en.support.wordpress.com/posts/tags/) and include their number in a combined posts and pages [tag-cloud](https://codex.wordpress.org/Function_Reference/wp_tag_cloud).
 
-TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.org/Administration_Over_SSL) and WordPress multisite network.
+TagPages is fully compatible with [https/SSL/TLS-sites](https://codex.wordpress.org/Administration_Over_SSL) and WordPress multisite network.
 
 **Plugin's website:** [http://www.bernhard-riedl.com/projects/](http://www.bernhard-riedl.com/projects/)
 
@@ -32,9 +32,9 @@ TagPages is fully compatible with [https/SSL/TLS-sites](http://codex.wordpress.o
 
 = How can I display the chosen tags on my pages? =
 
-You can use for example the built-in Theme Editor of WordPress to edit `page.php` (if such a template exists for your theme). WordPress provides two template functions which can be used out-of-the-box: [`the_tags`](http://codex.wordpress.org/Function_Reference/the_tags) and `get_the_tags`.
+You can use for example the built-in Theme Editor of WordPress to edit `page.php` (if such a template exists for your theme). WordPress provides two template functions which can be used out-of-the-box: [`the_tags`](https://codex.wordpress.org/Function_Reference/the_tags) and `get_the_tags`.
 
-For further information about themes, please refer to the WordPress Codex Pages for [Theme Development](http://codex.wordpress.org/Theme_Development) or the user's manual of our theme.
+For further information about themes, please refer to the WordPress Codex Pages for [Theme Development](https://codex.wordpress.org/Theme_Development) or the user's manual of our theme.
 
 = Will the tags I've created with TagPages be lost if I change the theme or disable TagPages? =
 
@@ -59,6 +59,11 @@ Sorry folks, no it doesn't. - But you can have a look at [my post](http://www.be
 No upgrade notices so far...
 
 == Changelog ==
+
+= 1.61 =
+
+* SSLified links
+* added assets/icons
 
 = 1.60 =
 

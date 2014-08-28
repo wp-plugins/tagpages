@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.bernhard-riedl.com/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.60
+Version: 1.61
 Author URI: http://www.bernhard-riedl.com/
 */
 
@@ -34,7 +34,7 @@ You should have received a copy of the
 GNU General Public License
 along with this program.
 
-If not, see http://www.gnu.org/licenses/.
+If not, see https://www.gnu.org/licenses/.
 */
 
 /*
@@ -290,7 +290,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.60\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.61\"/>\n");
 	}
 
 }
