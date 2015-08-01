@@ -5,7 +5,7 @@ Plugin Name: TagPages
 Plugin URI: http://www.bernhard-riedl.com/projects/
 Description: Adds post-tags functionality for pages.
 Author: Dr. Bernhard Riedl
-Version: 1.61
+Version: 1.62
 Author URI: http://www.bernhard-riedl.com/
 */
 
@@ -243,7 +243,7 @@ class TagPages {
 				$out = array();
 
 				foreach($tags as $c)
-					$out[] = sprintf('<a href="%s">%s</a>', esc_html(add_query_arg(array('post_type' => 'page', 'tag' => $c->slug), admin_url('edit.php'))), esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'tag', 'display')));
+					$out[] = sprintf('<a href="%s">%s</a>', esc_url(add_query_arg(array('post_type' => 'page', 'tag' => $c->slug), admin_url('edit.php'))), esc_html(sanitize_term_field('name', $c->name, $c->term_id, 'tag', 'display')));
 
 				echo join(', ', $out);
 			}
@@ -290,7 +290,7 @@ class TagPages {
 	*/
 
 	function head_meta() {
-		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.61\"/>\n");
+		echo("<meta name=\"".$this->get_nicename()."\" content=\"1.62\"/>\n");
 	}
 
 }
